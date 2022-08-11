@@ -1,12 +1,12 @@
-from curses.ascii import HT
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import ToDoList, Items
 # Create your views here.
 
 # Create a function that represent the view
 
-def index(response):
-    return HttpResponse('<h1>Hello World</h1>') # You can change the text format to a header or a body or whatnot by giving it a HTML tag (e.g. <h1>"Enter text here"</h1>)
+def index(response, id):
+    ls = ToDoList.objects.get(id = id)
+    items = ls.items_set.get(id = 1)
+    return HttpResponse(f'<h1>{ls.name}</h1><br></br><p>{items.text}</p>')
 
-def v1(response):
-    return HttpResponse('<h1>view 1</h1>')

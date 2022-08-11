@@ -2,8 +2,7 @@ from django.urls import path
 from . import views # Pretty much import views from the current directory
 
 urlpatterns = [
-path("", views.index, name = "index"), # If we get in the application and we're in the homepage, go to the views index page 
-                                        # (http://127.0.0.1:8000)
-path("v1/", views.v1, name = "view 1") # ("The path that we're looking for in view.py", the function in the views module, name = IDK what this part does) 
-                                        # (http://127.0.0.1:8000/v1/)
+path("<int:id>", views.index, name="index") # With <int:id>, were going to look for some integer in our path and pass it to the function used in views.index
+# Now, when running this on the website, it would give an error unless you do http://127.0.0.1:8000/"ENTER ANY NUMBER HERE"
+# Once you do, it would show any number that you input in a different page
 ]
