@@ -1,8 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class ToDoList(models.Model): # We're creating a database object which is called ToDoList
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="todolist", null=True) # Every ToDoList will be linked to some kind of user
     name = models.CharField(max_length = 200) # When creating a string, you will always need the max_length
 
     def __str__(self):

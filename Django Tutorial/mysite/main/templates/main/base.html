@@ -51,20 +51,18 @@
         <!--"a" is a link tag and href is where the link would go if you click on it--> 
         <a href="/">Home</a> <!--To leave it blank, put a '/' in href-->
         <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/logout">Logout</a>
         <a href="/create">Create</a>
-        <a href="/2">View</a>
+        <a href="/view">View</a>
     </div>
     <div id="content", name="content", class="main">
         <div class="row justify-content-center"> <!--This is to put it at the middle of page-->
             <div class="col-8">
                     <h1 class="mt-2">My Site</h1> <!--The header of the site--> <!--Refer to the bootstrap website to get different styles-->
                     <hr class="mt-0 mb-4">
-                    {% if user.is_authenticated %} <!--This will show only if the user is logged in-->
                         {% block content %}
                         {% endblock %}
-                    {% else %}
-                        <p>Login<a href="/login"> Here</a></div>p>
-                    {% endif %} <!--The above from 'logged in' will be deleted after since its blocking all content-->
             </div>
         </div>
     </div>
