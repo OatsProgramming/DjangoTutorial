@@ -1,0 +1,16 @@
+<!--This is where Django will look and what template it will use to render our login form-->
+{% extends "main/base.html" %}
+{% block title %}Login{% endblock %}
+<!--load crispy to make it look more organized-->
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="post", class="form-group">
+    {% csrf_token %}
+    <!--Add the filter here next to form-->
+    {{form | crispy}}
+    <p>Don't have an account? Create one <a href="/register">here</a></p>
+
+    <button type="submit", class="btn btn-success">Login</button>
+</form>
+
+{% endblock %}

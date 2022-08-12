@@ -125,3 +125,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # Adding a CSS framewok(?)
+
+LOGIN_REDIRECT_URL = "/" # After logging in, the user will be redirected to wherever that the "" holds

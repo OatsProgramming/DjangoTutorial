@@ -20,5 +20,8 @@ from register import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', v.register, name="register"),
-    path('', include('main.urls')) # If we dont type anything in the website path, we will automatically be directed to the main.urls path
+    path('', include('main.urls')), # If we dont type anything in the website path, we will automatically be directed to the main.urls path
+    path('', include("django.contrib.auth.urls")) # So what this will do now is it'll go to this application, 
+                                                    # it'll look in the URLs file there and we'll see if we have a valid URL
+
 ]

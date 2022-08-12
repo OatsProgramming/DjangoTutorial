@@ -7,5 +7,5 @@ path("<int:id>", views.index, name="index"), # With <int:id>, were going to look
 # Once you do, it would show any number that you input in a different page
 
 path("", views.home, name='home'), # Since its an empty string, this will automatically direct to views.py function home (check views.py to continue)
-path('create/', views.create, name='create') # Let's create another path: this will a page for creating new ToDoList items
+path('create/', views.create, name='create'), # Let's create another path: this will a page for creating new ToDoList items
 ]

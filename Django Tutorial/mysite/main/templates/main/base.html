@@ -59,8 +59,12 @@
             <div class="col-8">
                     <h1 class="mt-2">My Site</h1> <!--The header of the site--> <!--Refer to the bootstrap website to get different styles-->
                     <hr class="mt-0 mb-4">
-                    {% block content %}
-                    {% endblock %}
+                    {% if user.is_authenticated %} <!--This will show only if the user is logged in-->
+                        {% block content %}
+                        {% endblock %}
+                    {% else %}
+                        <p>Login<a href="/login"> Here</a></div>p>
+                    {% endif %} <!--The above from 'logged in' will be deleted after since its blocking all content-->
             </div>
         </div>
     </div>
