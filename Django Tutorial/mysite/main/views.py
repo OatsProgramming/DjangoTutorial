@@ -9,7 +9,6 @@ from .forms import CreateNewList
 
 def index(response, id):
     ls = ToDoList.objects.get(id = id)
-    
     if response.method == "POST":
         print(response.POST)
         if response.POST.get("save"):
@@ -26,8 +25,6 @@ def index(response, id):
                 ls.items_set.create(text = txt, complete = False)
             else:
                 print("invalid")
-
-
     return render (response, "main/list.html", {"ls":ls})
 
 def home(response):

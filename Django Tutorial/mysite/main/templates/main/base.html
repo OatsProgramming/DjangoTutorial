@@ -1,11 +1,46 @@
 <html>
     <head>
+        <!--We're going to add some style to the div section here-->
+        <!--This will be the sidebar-->
+        <!--Whenever you wanna specify a certain tag within a class you do the class name and the actual tag itself -->
+        <style type="text/css">
+            .sidenav {
+                height: 100%;
+                width: 160px;
+                position: fixed;
+                z-index: 1; 
+                top: 0;
+                left: 0;
+                background-color:black;
+                overflow-x: hidden;
+                padding-top: 20px;
+            }
+            .sidenav a {
+                padding: 6px 8px 6px 6px;
+                text-decoration: none;
+                color:antiquewhite;
+                font-size:25px;
+                display: block;
+            }
+            .sidenav a:hover {
+                color:aqua
+            }
+            .main {
+                margin-left:200px;
+                padding: 0px 10px
+            }
+        </style> <!-- For the .main, thats to make sure the main content moves to the right since theres a side bar-->
         <title>
             {% block title %}Jack's Website{% endblock %}
         </title>
     </head>
 <body>
-    <div id="content", name="content">
+    <div class="sidenav">
+        <a href="">Home</a> <!--"a" is a link tag and href is where the link would go if you click on it--> 
+        <a href="/create">Create</a>
+        <a href="/2">View</a>
+    </div>
+    <div id="content", name="content", class="main">
     {% block content %}
     {% endblock %}
     </div>
