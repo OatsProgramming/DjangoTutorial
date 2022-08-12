@@ -6,6 +6,6 @@ path("<int:id>", views.index, name="index"), # With <int:id>, were going to look
 # Now, when running this on the website, it would give an error unless you do http://127.0.0.1:8000/"ENTER ANY NUMBER HERE"
 # Once you do, it would show any number that you input in a different page
 
-path('', views.home, name='home'), # Since its an empty string, this will automatically direct to views.py function home (check views.py to continue)
+path("", views.home, name='home'), # Since its an empty string, this will automatically direct to views.py function home (check views.py to continue)
 path('create/', views.create, name='create') # Let's create another path: this will a page for creating new ToDoList items
 ]
